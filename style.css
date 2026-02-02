@@ -1,0 +1,238 @@
+* {
+     padding: 0;
+margin: 0;
+     box-sizing: border-box;
+
+} 
+body {
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+
+#home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+.video-container, video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     object-fit: cover;
+     z-index: 0;
+}
+
+nav {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0vw;
+    margin-top: 2vh;
+
+
+}  
+h1 {
+    color: rgb(255, 0, 0);
+    margin-left: 1rem;
+    font-size: 3rem;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-weight: bolder;
+}
+nav ul {
+    display: flex;
+    gap: 1vw; 
+    list-style: none;
+
+    align-items: center;
+    margin-top: 2vh;
+}
+
+nav ul a { text-decoration: none; }
+
+nav ul a button {
+    padding: 15px;
+    cursor: pointer;
+    margin-right: 2.5vw;
+} 
+button {
+    background-color: white;
+    color: white;
+    font-weight: bold;
+    border-radius: 5%;
+    position: relative;
+    z-index: 1;
+    border-radius: 10%;
+} 
+button::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    left: 0;
+    z-index: -1;
+     border-radius: 10%;
+    
+
+}
+button:hover::after{
+    background: transparent;
+
+} 
+button::before{
+    opacity:1;
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    z-index: -2;
+    width: 100%;
+    border-radius: 10%;
+    height: 100%;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    background: linear-gradient(to right, blue, orange, red, yellow, purple, pink , green);
+filter: blur(4px);
+background-size: 600%;
+animation:  glowing linear 10s  infinite;
+} 
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 600% 0;
+    }
+    100% {
+        background-position:0 0  ;
+    }
+}
+ button:hover::before{
+    opacity: 1;
+ } 
+.image {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: 20vh;
+    left: 2vw;
+    border-radius: 40%;
+    z-index: 1; 
+    background-color: blue;
+} 
+ .image img {
+      width: 500px;
+    height: 500px;
+    background-position: center;
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+    border-radius: 40%;
+    z-index: 1; 
+    animation: basnet linear 4s infinite;
+}
+@keyframes basnet {
+    0%{
+transform: scale(1);
+    }
+     50% {
+        transform: scale(1.05);
+    }
+    100% {
+transform: scale(1);    }
+    
+}
+.image::after{
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 103%;
+    height: 103%;
+    border-radius: 40%;
+    background-image: linear-gradient(to right, red, blue, green, orange, purple, skyblue, brown );
+    filter: blur(6px);
+    background-size: 600%;
+    animation: samrat linear 4s infinite;
+}
+@keyframes samrat {
+    0%{
+        background-position: 0 0;
+        transform: scale(1);
+    }
+     50% {
+        background-position: 600% 0; transform: scale(1.1);
+    }
+    100% {
+        background-position:0 0  ;
+    }
+    
+}
+ .about {
+    width: 50vw;
+    height: 30vh;
+    z-index: 1;
+    position: relative;
+    left: 50vw;
+    bottom: 15vh;
+ }
+ .about>h1 {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+ } 
+ .about>h3 {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 4vh;
+} 
+ .about> h5 {
+    color: rgb(253, 253, 253);
+    font-size: 3vh;
+ } 
+ span {
+    color: red;
+ } 
+.social-links{
+    width: 50vw;
+    height: auto;
+    position: absolute;
+position: absolute;
+right: 2vw;
+bottom: 5vh;
+padding: 10px;
+
+} 
+.social-links ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+    gap: 5vw;
+    margin-left: 3vw;
+    
+    padding: 0;
+}
+.social-links ul li img {
+    width: 40px;
+    height: 40px;
+    margin-left: 1vw;
+    object-fit: contain;
+    border: none;
+    border-radius: 50%;
+    transition: transform 1s linear;
+} 
+.social-links ul li img:hover{
+    transform: scale(1.3);
+}
